@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<html lang= "en-us">
+<head>
+	<meta charset="UTF-8">
+	<title>Trivia Game</title>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!--<link rel="stylesheet" type="text/css" href="reset.css">-->
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+	<script src="app.js"></script>
+	<!--<script src="apptwo.js"></script>-->
+	<!--<script src= "appthree.js"></script>-->
+</head>
+
+
+<body>
+
+	
+
+			<h1>*****Trivia Game*****</h1>
+
+
+			<br>
+
+	<div id= "startButtons">
+		<button  id= "startGame">Start Game</button>
+		<button  id= "nextQuestion">Next Question</button>
+		<button  id= "reset">New Game (reset)</button>
+	</div>
+
+	<br>
+	
+	<div id="gameStartscreen">
+			<div id="openText">Click "Start Game" to begin!</div>
+	
+	</div>
+
+	<div id="gameScreen">
+
+
+		<div class = "questionone">
+			<div id="question1">1.) What is division by zero?</div>
+			
+
+		<form class="form1">
+  		 <input type="radio" name="answer" id= "answer11" value="a" >0<br>
+ 		 <input type="radio" name="answer" id="answer12" value="b" >1/x<br>
+ 		 <input type="radio" name="answer" id="answer13" value="c" >undefined<br> 
+		</form> 
+
+		<p id="countdown"></p>
+
+		</div>
+
+	
+		
+
+
+
+	
+		<div class= "questiontwo">
+		<div id="question2">2.) Who is buried in Grant's tomb?</div>
+
+			
+
+		<form class="form2">
+		
+  		 <input type="radio" name= "answer" id="answer21" value="a" >Emma Grant<br>
+ 		 <input type="radio" name="answer" id="answer22" value="b">No one<br>
+ 		 <input type="radio" name= "answer" id="answer23"  value="c">Ulysses S. Grant<br>
+ 		
+
+		</form> 
+
+			<p id="countdown2"></p>
+
+
+		</div>
+
+
+
+	</div>
+
+
+
+	
+
+	
+
+		
+	
+	
+	<!--<div class= "resultButtons">
+		<button id= "submitAnswer" button type="submit" value="Submit" onclick="test(this.form)">Submit Answers</button>
+
+		<button id= "getResults">Get Score</button>
+	</div>-->
+
+
+	<div class= "resultButtons">
+		<input type="button" id= "submitAnswer"  value="Submit Answers" onclick="functionAlert();" />
+
+		<button id= "getResults">Get Score</button>
+	</div>
+
+
+
+<script>
+
+document.getElementById("startGame").addEventListener("click", function(){
+var timeleft = 5;
+	
+var downloadTimer = setInterval(function function1(){
+  document.getElementById("countdown").innerHTML = timeleft + "&nbsp"+"seconds remaining";
+  	document.getElementById("answer11").disabled =false;
+  	document.getElementById("answer12").disabled =false;
+  	document.getElementById("answer13").disabled =false;
+  
+  timeleft -= 1;
+  if(timeleft <= 0){
+   clearInterval(downloadTimer);
+    document.getElementById("countdown").innerHTML = "Time is up!"
+    document. getElementById("answer11").disabled = true;
+    document. getElementById("answer12").disabled = true;
+    document. getElementById("answer13").disabled = true;
+    
+   
+   
+  }
+
+
+
+
+}, 1000);
+
+
+
+
+});
+
+</script>
+
+<script>
+document.getElementById("nextQuestion").addEventListener("click", function(){
+var timelefttwo = 5;
+
+var downloadTimertwo = setInterval(function function2(){
+    document.getElementById("countdown2").innerHTML = timelefttwo +"&nbsp"+ "seconds remaining";
+  	document.getElementById("answer21").disabled =false;
+  	document.getElementById("answer22").disabled =false;
+  	document.getElementById("answer23").disabled =false;
+  
+
+  timelefttwo -= 1;
+  if(timelefttwo <= 0){
+    clearInterval(downloadTimertwo);
+    document.getElementById("countdown2").innerHTML = "Time is up!"
+    document.getElementById("answer21").disabled =true;
+  	document.getElementById("answer22").disabled =true;
+  	document.getElementById("answer23").disabled =true;
+  
+
+   
+  }
+}, 1000);
+
+});	
+
+</script>
+
+
+
+<script>
+document.getElementById("reset").addEventListener("click", reloadFunction);
+
+function reloadFunction() {
+  location.reload(true);
+
+}
+
+
+
+</script>
+
+
+
+	<div id= "Score">SCORE</div>
+
+
+	<script>
+         function functionAlert(msg, myYes) {
+            var confirmBox = $("#confirm");
+            confirmBox.find(".message").text(msg);
+            confirmBox.find(".yes").unbind().click(function() {
+               confirmBox.fadeOut(3000);
+            });
+            confirmBox.find(".yes").click(myYes);
+            confirmBox.show();
+
+
+         }
+      </script>
+     
+   
+   
+      <div id="confirm">
+         <div class="message">Your answers are being graded!!<br>Please be patient!</div><br>
+         <button class="yes">OK</button>
+      </div>
+     <!-- <input type="button" id= "testButton" value="Click Me" onclick="functionAlert();" />-->
+
+
+     <div id = "answer">ANSWERS</div>
+
+
+
+</body>
+</html>
+
+
+	
+
+
+
+ 
+
+	
+
+
+
+
+	
+
+
+
+	
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+
+	
+
+
+			
+
+
+
+		
+
+
+	
+
+
+	
+
+			
+
+	
+
+
+		
+		
+	
+
+	
+
+
+
+	
+
+
+		
+		
+
+
+
+
+	
+
+
+	
+
+
+
+
+
+
+
+
+
+			
+		
+
+		
+		
+		
+		
+			
+		
+	
+		
+	
+			
+
+			
+		
+
+		
+		
+		
+		
+
+		
+
+		
+		
+		
+	
+
+		
+		
+
+		
+		
+
+		
+		
+	
+		
+
+	
+
+	
+
+	
+
+	
+
+		
+
+
+	
+
+
+	
+
+	
+
+	
+	
+	
+
+
+
+
+
+		
+	
+
+
+		
+		
+			
+		
+
+		
+
+		
+		
+		
+
+		
+			
+
+		
+
+	
+
